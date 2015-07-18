@@ -80,21 +80,79 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/18/第一篇/" title="第一篇" itemprop="url">第一篇</a>
+      <a href="/2015/07/03/1002-写出这个数-20/" title="1002. 写出这个数 (20)" itemprop="url">1002. 写出这个数 (20)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-18T15:44:34.000Z" itemprop="datePublished"> 发表于 2015-07-18</time>
+    <time datetime="2015-07-02T16:04:49.000Z" itemprop="datePublished"> 发表于 2015-07-03</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        <p>第一篇。</p>
+        <p>读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10100。</p>
+<p>输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<p>输入样例：<br>1234567890987654321123456789<br>输出样例：<br>yi san wu</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
 
+<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a)</span></span>{
+    <span class="keyword">switch</span>(a){
+        <span class="keyword">case</span> <span class="number">0</span>: <span class="built_in">printf</span>(<span class="string">"ling"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">printf</span>(<span class="string">"yi"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">printf</span>(<span class="string">"er"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">printf</span>(<span class="string">"san"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">4</span>: <span class="built_in">printf</span>(<span class="string">"si"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">5</span>: <span class="built_in">printf</span>(<span class="string">"wu"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">6</span>: <span class="built_in">printf</span>(<span class="string">"liu"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">7</span>: <span class="built_in">printf</span>(<span class="string">"qi"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">8</span>: <span class="built_in">printf</span>(<span class="string">"ba"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">9</span>: <span class="built_in">printf</span>(<span class="string">"jiu"</span>);
+            <span class="keyword">break</span>;
+           <span class="keyword">default</span>:
+                 <span class="keyword">break</span>;
+    }
+}
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">char</span> c[<span class="number">101</span>];
+    <span class="keyword">int</span> j,sum=<span class="number">0</span>;
+    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,c);
+    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">101</span>;j++){
+        <span class="keyword">if</span>(c[j]==<span class="string">'\0'</span>)
+            <span class="keyword">break</span>;
+        sum+=c[j]-<span class="string">'0'</span>;
+    }
+    <span class="keyword">int</span> a[<span class="number">100</span>];
+    <span class="keyword">int</span> cnt = <span class="number">0</span>;
+    <span class="keyword">int</span> i;
+
+        <span class="keyword">while</span>(sum/<span class="number">10</span> != <span class="number">0</span>){
+        a[cnt] = sum % <span class="number">10</span>;
+        sum = sum/<span class="number">10</span>;
+        cnt++;
+       }
+       a[cnt] = sum;
+    <span class="keyword">for</span>(i=cnt; i&gt;=<span class="number">0</span>; i--){
+        print(a[i]);
+        <span class="keyword">if</span>(i!=<span class="number">0</span>){
+            <span class="built_in">printf</span>(<span class="string">" "</span>);
+        }
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
         
         
         <p class="article-more-link">
@@ -106,13 +164,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
+  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/日常/">日常</a>
+  <span></span> <a href="/tags/Coding/">Coding</a>
   </div>
 
 </div>
@@ -123,7 +181,7 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2015/07/18/第一篇/#disqus_thread" class="comments-count-link">Comments</a>
+		<a href="/2015/07/03/1002-写出这个数-20/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -193,6 +251,11 @@
 </div>
 
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Coding/">Coding</a>
+  </div>
+
 </div>
 
 
@@ -202,6 +265,69 @@
 	
 	  	<span></span>
 		<a href="/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/01/第一篇/" title="第一篇" itemprop="url">第一篇</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-01T04:44:34.000Z" itemprop="datePublished"> 发表于 2015-07-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>第一篇。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/生活/">生活</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/日常/">日常</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/07/01/第一篇/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -229,7 +355,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/PAT-Basic/" title="PAT Basic">PAT Basic<sup>1</sup></a></li>
+			<li><a href="/categories/PAT-Basic/" title="PAT Basic">PAT Basic<sup>2</sup></a></li>
 		  
 		
 		  
@@ -244,6 +370,10 @@
 <div class="tagslist">
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Coding/" title="Coding">Coding<sup>2</sup></a></li>
+			
 		
 			
 				<li><a href="/tags/日常/" title="日常">日常<sup>1</sup></a></li>
