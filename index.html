@@ -137,12 +137,11 @@
     <span class="keyword">int</span> a[<span class="number">100</span>];
     <span class="keyword">int</span> cnt = <span class="number">0</span>;
     <span class="keyword">int</span> i;
-
-        <span class="keyword">while</span>(sum/<span class="number">10</span> != <span class="number">0</span>){
+    <span class="keyword">while</span>(sum/<span class="number">10</span> != <span class="number">0</span>){
         a[cnt] = sum % <span class="number">10</span>;
         sum = sum/<span class="number">10</span>;
         cnt++;
-       }
+        }
        a[cnt] = sum;
     <span class="keyword">for</span>(i=cnt; i&gt;=<span class="number">0</span>; i--){
         print(a[i]);
