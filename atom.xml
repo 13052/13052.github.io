@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[Yihang Ding]]></title>
+  <subtitle><![CDATA[Record my thoughts]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://www.dyhfox.com//"/>
+  <updated>2015-07-18T16:44:30.000Z</updated>
+  <id>http://www.dyhfox.com//</id>
+  
+  <author>
+    <name><![CDATA[Fox]]></name>
+    <email><![CDATA[dyhfox123@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[1002. 写出这个数 (20)]]></title>
+    <link href="http://www.dyhfox.com/2015/07/03/1002-%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0-20/"/>
+    <id>http://www.dyhfox.com/2015/07/03/1002-写出这个数-20/</id>
+    <published>2015-07-02T16:04:49.000Z</published>
+    <updated>2015-07-18T16:44:30.000Z</updated>
+    <content type="html"><![CDATA[<p>读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10100。</p>
+<p>输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<p>输入样例：<br>1234567890987654321123456789<br>输出样例：<br>yi san wu</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
+
+<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a)</span></span>{
+    <span class="keyword">switch</span>(a){
+        <span class="keyword">case</span> <span class="number">0</span>: <span class="built_in">printf</span>(<span class="string">"ling"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">printf</span>(<span class="string">"yi"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">printf</span>(<span class="string">"er"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">printf</span>(<span class="string">"san"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">4</span>: <span class="built_in">printf</span>(<span class="string">"si"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">5</span>: <span class="built_in">printf</span>(<span class="string">"wu"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">6</span>: <span class="built_in">printf</span>(<span class="string">"liu"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">7</span>: <span class="built_in">printf</span>(<span class="string">"qi"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">8</span>: <span class="built_in">printf</span>(<span class="string">"ba"</span>);
+            <span class="keyword">break</span>;
+        <span class="keyword">case</span> <span class="number">9</span>: <span class="built_in">printf</span>(<span class="string">"jiu"</span>);
+            <span class="keyword">break</span>;
+           <span class="keyword">default</span>:
+                 <span class="keyword">break</span>;
+    }
+}
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">char</span> c[<span class="number">101</span>];
+    <span class="keyword">int</span> j,sum=<span class="number">0</span>;
+    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,c);
+    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">101</span>;j++){
+        <span class="keyword">if</span>(c[j]==<span class="string">'\0'</span>)
+            <span class="keyword">break</span>;
+        sum+=c[j]-<span class="string">'0'</span>;
+    }
+    <span class="keyword">int</span> a[<span class="number">100</span>];
+    <span class="keyword">int</span> cnt = <span class="number">0</span>;
+    <span class="keyword">int</span> i;
+    <span class="keyword">while</span>(sum/<span class="number">10</span> != <span class="number">0</span>){
+        a[cnt] = sum % <span class="number">10</span>;
+        sum = sum/<span class="number">10</span>;
+        cnt++;
+        }
+       a[cnt] = sum;
+    <span class="keyword">for</span>(i=cnt; i&gt;=<span class="number">0</span>; i--){
+        print(a[i]);
+        <span class="keyword">if</span>(i!=<span class="number">0</span>){
+            <span class="built_in">printf</span>(<span class="string">" "</span>);
+        }
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10100。</p>
+<p>输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼]]>
+    </summary>
+    
+      <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
+    
+      <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[1001. 害死人不偿命的(3n+1)猜想 (15)]]></title>
+    <link href="http://www.dyhfox.com/2015/07/01/1001-%E5%AE%B3%E6%AD%BB%E4%BA%BA%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%84-3n-1-%E7%8C%9C%E6%83%B3-15/"/>
+    <id>http://www.dyhfox.com/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/</id>
+    <published>2015-07-01T15:53:48.000Z</published>
+    <updated>2015-07-18T16:14:01.000Z</updated>
+    <content type="html"><![CDATA[<p>卡拉兹(Callatz)猜想：</p>
+<p>对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
+<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？</p>
+<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。</p>
+<p>输出格式：输出从n计算到1需要的步数。</p>
+<p>输入样例：<br>3<br>输出样例：<br>5</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> cnt=<span class="number">0</span>; <span class="comment">// Counter</span>
+    <span class="keyword">int</span> n;
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);
+
+    <span class="comment">// Process Clalatz</span>
+    <span class="keyword">while</span>(n!=<span class="number">1</span>){
+        n=n%<span class="number">2</span> ? (<span class="number">3</span>*n+<span class="number">1</span>)/<span class="number">2</span> : n/<span class="number">2</span>;
+        cnt++;
+    }
+    <span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);
+    reuturn <span class="number">0</span>;
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>卡拉兹(Callatz)猜想：</p>
+<p>对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想]]>
+    </summary>
+    
+      <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
+    
+      <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[第一篇]]></title>
+    <link href="http://www.dyhfox.com/2015/07/01/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
+    <id>http://www.dyhfox.com/2015/07/01/第一篇/</id>
+    <published>2015-07-01T04:44:34.000Z</published>
+    <updated>2015-07-18T16:03:46.000Z</updated>
+    <content type="html"><![CDATA[<p>第一篇。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>第一篇。</p>
+]]>
+    </summary>
+    
+      <category term="日常" scheme="http://www.dyhfox.com/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="生活" scheme="http://www.dyhfox.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>
