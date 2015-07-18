@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>第一篇 | Yihang Ding</title>
+    <title>1001. 害死人不偿命的(3n+1)猜想 (15) | Yihang Ding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Fox">
     
 
-    
-    <meta name="description" content="第一篇。">
+    <meta name="keywords" content="卡拉兹猜想, c语言, 3n+1">
+    <meta name="description" content="卡拉兹(Callatz)猜想：
+对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇">
-<meta property="og:url" content="http://www.dyhfox.com/2015/07/18/第一篇/index.html">
+<meta property="og:title" content="1001. 害死人不偿命的(3n+1)猜想 (15)">
+<meta property="og:url" content="http://www.dyhfox.com/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/index.html">
 <meta property="og:site_name" content="Yihang Ding">
-<meta property="og:description" content="第一篇。">
-<meta property="og:updated_time" content="2015-07-18T15:49:24.000Z">
+<meta property="og:description" content="卡拉兹(Callatz)猜想：
+对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研">
+<meta property="og:updated_time" content="2015-07-18T16:02:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇">
-<meta name="twitter:description" content="第一篇。">
+<meta name="twitter:title" content="1001. 害死人不偿命的(3n+1)猜想 (15)">
+<meta name="twitter:description" content="卡拉兹(Callatz)猜想：
+对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研">
 
     
     <link rel="alternative" href="/atom.xml" title="Yihang Ding" type="application/atom+xml">
@@ -79,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/18/第一篇/" title="第一篇" itemprop="url">第一篇</a>
+      <a href="/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/" title="1001. 害死人不偿命的(3n+1)猜想 (15)" itemprop="url">1001. 害死人不偿命的(3n+1)猜想 (15)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-18T15:44:34.000Z" itemprop="datePublished"> 发表于 2015-07-18</time>
+    <time datetime="2015-07-01T15:53:48.000Z" itemprop="datePublished"> 发表于 2015-07-01</time>
     
   </p>
 </header>
@@ -99,22 +102,37 @@
 		
 		</div>
 		
-		<p>第一篇。</p>
-  
+		<p>卡拉兹(Callatz)猜想：</p>
+<p>对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
+<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？</p>
+<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。</p>
+<p>输出格式：输出从n计算到1需要的步数。</p>
+<p>输入样例：<br>3<br>输出样例：<br>5</p>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> cnt=<span class="number">0</span>; <span class="comment">// Counter</span>
+    <span class="keyword">int</span> n;
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);
+
+    <span class="comment">// Process Clalatz</span>
+    <span class="keyword">while</span>(n!=<span class="number">1</span>){
+        n=n%<span class="number">2</span> ? (<span class="number">3</span>*n+<span class="number">1</span>)/<span class="number">2</span> : n/<span class="number">2</span>;
+        cnt++;
+    }
+    <span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);
+    reuturn <span class="number">0</span>;
+}
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
+  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/日常/">日常</a>
-  </div>
 
 </div>
 
@@ -122,7 +140,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.dyhfox.com/2015/07/18/第一篇/" data-title="第一篇 | Yihang Ding" data-tsina="hangge130" class="share clearfix">
+	  <div data-url="http://www.dyhfox.com/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/" data-title="1001. 害死人不偿命的(3n+1)猜想 (15) | Yihang Ding" data-tsina="hangge130" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -135,14 +153,14 @@
 	
 <nav class="article-nav clearfix">
  
-
-<div class="next">
-<a href="/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/"  title="1001. 害死人不偿命的(3n+1)猜想 (15)">
- <strong>下一篇：</strong><br/> 
- <span>1001. 害死人不偿命的(3n+1)猜想 (15)
-</span>
+ <div class="prev" >
+ <a href="/2015/07/18/第一篇/" title="第一篇">
+  <strong>上一篇：</strong><br/>
+  <span>
+  第一篇</span>
 </a>
 </div>
+
 
 </nav>
 
