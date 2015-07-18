@@ -1,10 +1,11 @@
 
-  <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>归档: 2015 | Yihang Ding</title>
+    <title>test | Yihang Ding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Fox">
@@ -13,12 +14,13 @@
     
     <meta name="description" content="Think and Learn">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yihang Ding">
-<meta property="og:url" content="http://www.dyhfox.com/archives/2015/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://www.dyhfox.com/test/index.html">
 <meta property="og:site_name" content="Yihang Ding">
 <meta property="og:description" content="Think and Learn">
+<meta property="og:updated_time" content="2015-07-18T13:25:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yihang Ding">
+<meta name="twitter:title" content="test">
 <meta name="twitter:description" content="Think and Learn">
 
     
@@ -34,9 +36,9 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
-    <body>
-      <header>
-        
+      <body>
+        <header>
+          
 <div>
 		
 			<div id="imglogo">
@@ -70,40 +72,61 @@
 				</ul>
 			</nav>			
 </div>
-      </header>
-      <div id="container">
-        
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/test/index.html" title="test" itemprop="url">test</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-18T13:25:06.000Z" itemprop="datePublished"> 发表于 2015-07-18</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
-<div class="archive-title" >
-  <h2 class="archive-icon">2015</h2>
-  
-  <div class="archiveslist archive-float clearfix">
-   <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015 年 07 月</a><span class="archive-list-count">1</span></li></ul>
- </div>
-  
+
 </div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/07/18/第一篇/" title="第一篇" itemprop="url">
-  
-
-    <time datetime="2015-07-18T15:44:34.000Z" itemprop="datePublished">2015-07-18</time>
 
 
-    <h1 itemprop="name">第一篇</h1>
 
-  </a>
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://www.dyhfox.com/test/index.html" data-title="test | Yihang Ding" data-tsina="hangge130" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
 </section>
 
-
-  </div>
-</div>
-
-      </div>
-      <footer><div id="footer" >
+</div>  
+        </div>
+        <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -150,7 +173,7 @@
 		</p>
 </div>
 </footer>
-      <script src="/js/jquery-2.0.3.min.js"></script>
+        <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 <script src="/js/jquery.qrcode-0.12.0.min.js"></script>
@@ -200,6 +223,55 @@ $(document).ready(function(){
 });
 </script>
 
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -317,5 +389,6 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-    </body>
-   </html>
+      </body>
+     </html>
+     
