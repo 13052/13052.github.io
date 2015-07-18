@@ -27,7 +27,7 @@
 字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；
 任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串；
 如果 aPbTc 是">
-<meta property="og:updated_time" content="2015-07-18T18:55:30.000Z">
+<meta property="og:updated_time" content="2015-07-18T19:03:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1003. 我要通过！(20)">
 <meta name="twitter:description" content="“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。
@@ -123,7 +123,7 @@
 </ol>
 <p>现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。<br>输入格式： 每个测试输入包含1个测试用例。第1行给出一个自然数n (&lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。</p>
 <p>输出格式：每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。</p>
-<p>输入样例：<br>8<br>PAT<br>PAAT<br>AAPATAA<br>AAPAATAAAA<br>xPATx<br>PT<br>Whatever<br>APAAATAA<br>输出样例：<br>YES<br>YES<br>YES<br>YES<br>NO<br>NO<br>NO<br>NO</p>
+<p>输入样例：<br>8<br>PAT<br>PAAT<br>AAPATAA<br>AAPAATAAAA<br>xPATx<br>PT<br>Whatever<br>APAAATAA<br>输出样例：<br>YES<br>YES<br>YES<br>YES<br>NO<br>NO<br>NO<br>NO<br><a id="more"></a></p>
 <p><em>这个程序题目的关键在于发现这样的一个规律：P和T之前的A的个数乘以中间的A的个数等于T之后A的个数</em><br>发现这个规律就好写多了。我也是看了好久才发现-_-#</p>
 <pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span>
