@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Record my thoughts]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.dyhfox.com//"/>
-  <updated>2015-07-19T14:04:52.000Z</updated>
+  <updated>2015-07-19T20:05:21.000Z</updated>
   <id>http://www.dyhfox.com//</id>
   
   <author>
@@ -14,6 +14,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[说反话]]></title>
+    <link href="http://www.dyhfox.com/2015/07/11/1009-%E8%AF%B4%E5%8F%8D%E8%AF%9D/"/>
+    <id>http://www.dyhfox.com/2015/07/11/1009-说反话/</id>
+    <published>2015-07-11T00:02:13.000Z</published>
+    <updated>2015-07-19T20:05:21.000Z</updated>
+    <content type="html"><![CDATA[<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
+<p>输入格式：测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。</p>
+<p>输出格式：每个测试用例的输出占一行，输出倒序后的句子。</p>
+<p>输入样例：<br>Hello World Here I Come<br>输出样例：<br>Come I Here World Hello</p>
+<p>这道题如果说有难点，那就是字符串处理的熟悉程度比较重要了。</p>
+<a id="more"></a>
+<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="preprocessor">#<span class="keyword">include</span> &lt;string.h&gt;</span>
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">char</span> s[<span class="number">80</span>]; <span class="comment">//store string</span>
+    <span class="keyword">int</span> i=<span class="number">0</span>;    <span class="comment">//initialize</span>
+    <span class="keyword">char</span> c;
+    <span class="keyword">int</span> j;
+
+    <span class="comment">//input string</span>
+    <span class="keyword">while</span>(<span class="number">1</span>){
+        <span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;s[i]);
+        <span class="keyword">if</span>(s[i]==<span class="string">'\n'</span>)
+            <span class="keyword">break</span>;
+        i++;
+    }
+    <span class="keyword">int</span> tag = i;    <span class="comment">//store counted number of string</span>
+
+    <span class="comment">//print string as the requirment</span>
+    <span class="keyword">for</span>(i=tag;i&gt;=<span class="number">0</span>;i--){
+        <span class="keyword">if</span>(s[i]==<span class="string">' '</span>){
+            <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;tag;j++){
+                <span class="built_in">printf</span>(<span class="string">"%c"</span>,s[j]);
+            }
+            <span class="built_in">printf</span>(<span class="string">" "</span>);
+            tag=i;
+        }
+        <span class="keyword">if</span>(i==<span class="number">0</span>){
+                <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;tag;j++){
+                    <span class="built_in">printf</span>(<span class="string">"%c"</span>,s[j]);  
+                }
+            }
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
+<p>输入格式：测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。</p>
+<p>输出格式：每个测试用例的输出占一行，输出倒序后的句子。</p>
+<p>输入样例：<br>Hello World Here I Come<br>输出样例：<br>Come I Here World Hello</p>
+<p>这道题如果说有难点，那就是字符串处理的熟悉程度比较重要了。</p>]]>
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
+    
+      <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[1008. 数组循环右移问题]]></title>
