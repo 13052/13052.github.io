@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>第一篇 | Yihang Ding</title>
+    <title>1005. 继续(3n+1)猜想 | Yihang Ding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Fox">
     
 
-    
-    <meta name="description" content="第一篇。">
+    <meta name="keywords" content="c, 编程">
+    <meta name="description" content="卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。
+当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇">
-<meta property="og:url" content="http://www.dyhfox.com/2015/07/01/第一篇/index.html">
+<meta property="og:title" content="1005. 继续(3n+1)猜想">
+<meta property="og:url" content="http://www.dyhfox.com/2015/07/07/1005-继续-3n-1-猜想/index.html">
 <meta property="og:site_name" content="Yihang Ding">
-<meta property="og:description" content="第一篇。">
-<meta property="og:updated_time" content="2015-07-18T16:03:46.000Z">
+<meta property="og:description" content="卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。
+当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆">
+<meta property="og:updated_time" content="2015-07-19T13:50:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇">
-<meta name="twitter:description" content="第一篇。">
+<meta name="twitter:title" content="1005. 继续(3n+1)猜想">
+<meta name="twitter:description" content="卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。
+当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆">
 
     
     <link rel="alternative" href="/atom.xml" title="Yihang Ding" type="application/atom+xml">
@@ -79,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/01/第一篇/" title="第一篇" itemprop="url">第一篇</a>
+      <a href="/2015/07/07/1005-继续-3n-1-猜想/" title="1005. 继续(3n+1)猜想" itemprop="url">1005. 继续(3n+1)猜想</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-01T04:44:34.000Z" itemprop="datePublished"> 发表于 2015-07-01</time>
+    <time datetime="2015-07-07T12:23:46.000Z" itemprop="datePublished"> 发表于 2015-07-07</time>
     
   </p>
 </header>
@@ -99,21 +102,105 @@
 		
 		</div>
 		
-		<p>第一篇。</p>
-  
+		<p>卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。</p>
+<p>当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆盖”的数。我们称一个数列中的某个数n为“关键数”，如果n不能被数列中的其他数字所覆盖。</p>
+<p>现在给定一系列待验证的数字，我们只需要验证其中的几个关键数，就可以不必再重复验证余下的数字。你的任务就是找出这些关键数字，并按从大到小的顺序输出它们。</p>
+<p>输入格式：每个测试输入包含1个测试用例，第1行给出一个正整数K(&lt;100)，第2行给出K个互不相同的待验证的正整数n(1&lt;n&lt;=100)的值，数字间用空格隔开。</p>
+<p>输出格式：每个测试用例的输出占一行，按从大到小的顺序输出关键数字。数字间用1个空格隔开，但一行中最后一个数字后没有空格。</p>
+<p>输入样例：<br>6<br>3 5 6 7 8 11<br>输出样例：<br>7 6</p>
+<p>这道题的描述比较拗口，其实就是找出来其他数进行卡拉兹猜想进行过程中出现的中间数，看是否包含已经给出的这几个数。最后要输出其他数进行卡拉兹猜想的中间数不包含的那些数。</p>
+<a id="more"></a>
+<p>我自己马虎大意，没有完全理解题意，把3<em>n+1算作一步 3\</em>n+1/2又算作一步，导致程序有一个测试点过不去。注意这两个式子是一步。如果分成两步，会多算出来一些中间数，导致某个输入样例本来是关键数结果被包含。</p>
+<p>下面是我的代码，程序关系比较复杂，嵌套有些多，改天看看是否可以优化一下。</p>
+<pre><code><span class="preprocessor">#include &lt;stdio.h&gt;</span>
+typedef <span class="keyword">struct</span> input{
+    <span class="keyword">int</span> <span class="keyword">value</span>;
+    <span class="keyword">int</span> key;
+}Input;
+<span class="function"><span class="keyword">void</span> <span class="title">proc</span>(<span class="params">Input *p, <span class="keyword">int</span> k</span>)</span>{
+    <span class="keyword">int</span> i,j;
+    <span class="keyword">int</span> n;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++){
+        n=p[i].<span class="keyword">value</span>;
+        <span class="keyword">if</span>(p[i].key ==<span class="number">1</span>){
+            <span class="keyword">while</span>(n!=<span class="number">1</span>){
+                <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>){
+                    n=n/<span class="number">2</span>;
+                }
+                <span class="keyword">else</span>{
+                    n=n*<span class="number">3</span>+<span class="number">1</span>;
+                    n=n/<span class="number">2</span>;
+                }
+                <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;k;j++){
+                    <span class="keyword">if</span>(p[j].<span class="keyword">value</span> == n){
+                        p[j].key = <span class="number">0</span>;
+                    }
+                }
+            }
+        }
+    }
+}
+<span class="function"><span class="keyword">void</span> <span class="title">print</span>(<span class="params">Input *p, <span class="keyword">int</span> k</span>)</span>{
+    <span class="keyword">int</span> i, j;
+    <span class="keyword">int</span> temp;
+    <span class="keyword">int</span> cnt=<span class="number">0</span>;
+    <span class="keyword">int</span> count=<span class="number">0</span>;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++){
+        <span class="keyword">if</span>(p[i].key ==<span class="number">1</span>){
+            count++;
+        }
+    }
+    <span class="comment">//sort</span>
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++){
+        <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;k;j++){
+            <span class="keyword">if</span>(p[i].key==<span class="number">1</span>&amp;&amp;p[j].key==<span class="number">1</span>){
+                <span class="keyword">if</span>(p[i].<span class="keyword">value</span>&lt;p[j].<span class="keyword">value</span>){
+                    temp = p[i].<span class="keyword">value</span>;
+                    p[i].<span class="keyword">value</span> = p[j].<span class="keyword">value</span>;
+                    p[j].<span class="keyword">value</span> = temp;
+                }
+            }
+        }
+    }
+    <span class="comment">//print</span>
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++){
+        <span class="keyword">if</span>(p[i].key ==<span class="number">1</span>){
+
+            printf(<span class="string">"%d"</span>, p[i].<span class="keyword">value</span>);
+            cnt++;
+            <span class="keyword">if</span>(cnt!=count){
+                printf(<span class="string">" "</span>);
+            }
+
+        }
+    }
+}
+<span class="function"><span class="keyword">int</span> <span class="title">main</span>(<span class="params"></span>)</span>{
+    <span class="keyword">int</span> k,i;
+    scanf(<span class="string">"%d"</span>,&amp;k);
+    Input a[k];
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++){
+        scanf(<span class="string">"%d"</span>,&amp;a[i].<span class="keyword">value</span>);
+        a[i].key = <span class="number">1</span>;
+    }
+    proc(a,k);
+    print(a,k);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
+  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/日常/">日常</a>
+  <span></span> <a href="/tags/Coding/">Coding</a>
   </div>
 
 </div>
@@ -122,7 +209,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.dyhfox.com/2015/07/01/第一篇/" data-title="第一篇 | Yihang Ding" data-tsina="hangge130" class="share clearfix">
+	  <div data-url="http://www.dyhfox.com/2015/07/07/1005-继续-3n-1-猜想/" data-title="1005. 继续(3n+1)猜想 | Yihang Ding" data-tsina="hangge130" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,19 +223,27 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/" title="1001. 害死人不偿命的(3n+1)猜想 (15)">
+ <a href="/2015/07/08/1006-换个格式输出整数/" title="1006. 换个格式输出整数">
   <strong>上一篇：</strong><br/>
   <span>
-  1001. 害死人不偿命的(3n+1)猜想 (15)</span>
+  1006. 换个格式输出整数</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2015/07/06/1004-成绩排名-20/"  title="1004. 成绩排名 (20)">
+ <strong>下一篇：</strong><br/> 
+ <span>1004. 成绩排名 (20)
+</span>
+</a>
+</div>
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/01/第一篇/" data-title="第一篇" data-url="http://www.dyhfox.com/2015/07/01/第一篇/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/07/1005-继续-3n-1-猜想/" data-title="1005. 继续(3n+1)猜想" data-url="http://www.dyhfox.com/2015/07/07/1005-继续-3n-1-猜想/"></div>
 </section>
 
 

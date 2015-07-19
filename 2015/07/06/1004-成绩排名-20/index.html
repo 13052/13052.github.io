@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>第一篇 | Yihang Ding</title>
+    <title>1004. 成绩排名 (20) | Yihang Ding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Fox">
     
 
-    
-    <meta name="description" content="第一篇。">
+    <meta name="keywords" content="c, 编程, PAT">
+    <meta name="description" content="读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+输入格式：每个测试输入包含1个测试用例，格式为
+  第1行：正整数n  第2行：第1个学生的姓名 学号 成绩  第3行：第2个学生的姓名 学号 成绩  … … …  第n+1行：第n个学生的姓名 学号 成绩其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇">
-<meta property="og:url" content="http://www.dyhfox.com/2015/07/01/第一篇/index.html">
+<meta property="og:title" content="1004. 成绩排名 (20)">
+<meta property="og:url" content="http://www.dyhfox.com/2015/07/06/1004-成绩排名-20/index.html">
 <meta property="og:site_name" content="Yihang Ding">
-<meta property="og:description" content="第一篇。">
-<meta property="og:updated_time" content="2015-07-18T16:03:46.000Z">
+<meta property="og:description" content="读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+输入格式：每个测试输入包含1个测试用例，格式为
+  第1行：正整数n  第2行：第1个学生的姓名 学号 成绩  第3行：第2个学生的姓名 学号 成绩  … … …  第n+1行：第n个学生的姓名 学号 成绩其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成">
+<meta property="og:updated_time" content="2015-07-19T13:41:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇">
-<meta name="twitter:description" content="第一篇。">
+<meta name="twitter:title" content="1004. 成绩排名 (20)">
+<meta name="twitter:description" content="读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。
+输入格式：每个测试输入包含1个测试用例，格式为
+  第1行：正整数n  第2行：第1个学生的姓名 学号 成绩  第3行：第2个学生的姓名 学号 成绩  … … …  第n+1行：第n个学生的姓名 学号 成绩其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成">
 
     
     <link rel="alternative" href="/atom.xml" title="Yihang Ding" type="application/atom+xml">
@@ -79,14 +85,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/01/第一篇/" title="第一篇" itemprop="url">第一篇</a>
+      <a href="/2015/07/06/1004-成绩排名-20/" title="1004. 成绩排名 (20)" itemprop="url">1004. 成绩排名 (20)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-01T04:44:34.000Z" itemprop="datePublished"> 发表于 2015-07-01</time>
+    <time datetime="2015-07-06T13:23:15.000Z" itemprop="datePublished"> 发表于 2015-07-06</time>
     
   </p>
 </header>
@@ -99,21 +105,91 @@
 		
 		</div>
 		
-		<p>第一篇。</p>
-  
+		<p>读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。</p>
+<p>输入格式：每个测试输入包含1个测试用例，格式为</p>
+<p>  第1行：正整数n<br>  第2行：第1个学生的姓名 学号 成绩<br>  第3行：第2个学生的姓名 学号 成绩<br>  … … …<br>  第n+1行：第n个学生的姓名 学号 成绩<br>其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。<br>输出格式：对每个测试用例输出2行，第1行是成绩最高学生的姓名和学号，第2行是成绩最低学生的姓名和学号，字符串间有1空格。</p>
+<p>输入样例：<br>3<br>Joe Math990112 89<br>Mike CS991301 100<br>Mary EE990830 95<br>输出样例：<br>Mike CS991301<br>Joe Math990112</p>
+<p>这道题很简单，但是需要用到结构体数组，用来存储类型不同类型的数据，这样会方便的多。<br><a id="more"></a></p>
+<pre><code>   <span class="comment">/*
+Input is a list of students, every student have a     neme, an id, and a score. 
+Print the name and id of highest and lowest student.
+*/</span>
+
+<span class="preprocessor">#<span class="keyword">include</span> "stdio.h"</span>
+<span class="preprocessor">#<span class="keyword">include</span> "stdlib.h"</span>
+<span class="preprocessor">#<span class="keyword">include</span> "string.h"</span>
+
+<span class="keyword">typedef</span> <span class="keyword">struct</span> stu{
+<span class="comment">//Mention it that the puzzle is required 10 long string, plus '\0', we should create name[11], id[11]</span>
+<span class="keyword">char</span> name[<span class="number">11</span>];
+<span class="keyword">char</span> id[<span class="number">11</span>];
+<span class="keyword">int</span> score;
+}Student;
+
+<span class="function"><span class="keyword">void</span> <span class="title">sorted_print</span><span class="params">(Student *p,<span class="keyword">int</span> n)</span></span>{
+    <span class="keyword">int</span> min;
+    <span class="keyword">int</span> max =min= p[<span class="number">0</span>].score;
+    <span class="keyword">int</span> i;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){
+        <span class="keyword">if</span> (max&lt;p[i].score){
+            max = p[i].score;
+        }
+    }
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){
+        <span class="keyword">if</span> (min&gt;p[i].score){
+            min = p[i].score;
+        }
+    }
+    i=<span class="number">0</span>;<span class="comment">//Reinitialize i = 0;</span>
+    <span class="keyword">int</span> flagmax,flagmin;
+    <span class="keyword">while</span>(i&lt;n){
+        <span class="keyword">if</span>(max==p[i].score){
+            flagmax = i;
+        }
+        <span class="keyword">if</span>(min==p[i].score){
+            flagmin = i;
+
+        }
+        i++;
+    }
+    <span class="built_in">printf</span>(<span class="string">"%s"</span>,p[flagmax].name );
+    <span class="built_in">printf</span>(<span class="string">" "</span>);
+    <span class="built_in">printf</span>(<span class="string">"%s"</span>,p[flagmax].id);
+    <span class="built_in">printf</span>(<span class="string">"\n"</span>);
+
+    <span class="built_in">printf</span>(<span class="string">"%s"</span>,p[flagmin].name );
+    <span class="built_in">printf</span>(<span class="string">" "</span>);
+    <span class="built_in">printf</span>(<span class="string">"%s"</span>,p[flagmin].id);
+    <span class="built_in">printf</span>(<span class="string">"\n"</span>);
+}
+
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> n;
+    <span class="keyword">int</span> i;
+    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);
+    Student stu[n];
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++){
+        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;stu[i].name);
+        <span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;stu[i].id);
+        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;stu[i].score);        
+    }
+    sorted_print(stu,n);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/生活/">生活</a>
+  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/日常/">日常</a>
+  <span></span> <a href="/tags/Coding/">Coding</a>
   </div>
 
 </div>
@@ -122,7 +198,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.dyhfox.com/2015/07/01/第一篇/" data-title="第一篇 | Yihang Ding" data-tsina="hangge130" class="share clearfix">
+	  <div data-url="http://www.dyhfox.com/2015/07/06/1004-成绩排名-20/" data-title="1004. 成绩排名 (20) | Yihang Ding" data-tsina="hangge130" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,19 +212,27 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/07/01/1001-害死人不偿命的-3n-1-猜想-15/" title="1001. 害死人不偿命的(3n+1)猜想 (15)">
+ <a href="/2015/07/07/1005-继续-3n-1-猜想/" title="1005. 继续(3n+1)猜想">
   <strong>上一篇：</strong><br/>
   <span>
-  1001. 害死人不偿命的(3n+1)猜想 (15)</span>
+  1005. 继续(3n+1)猜想</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2015/07/05/1003-我要通过！-20/"  title="1003. 我要通过！(20)">
+ <strong>下一篇：</strong><br/> 
+ <span>1003. 我要通过！(20)
+</span>
+</a>
+</div>
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/01/第一篇/" data-title="第一篇" data-url="http://www.dyhfox.com/2015/07/01/第一篇/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/06/1004-成绩排名-20/" data-title="1004. 成绩排名 (20)" data-url="http://www.dyhfox.com/2015/07/06/1004-成绩排名-20/"></div>
 </section>
 
 
