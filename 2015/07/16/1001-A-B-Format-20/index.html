@@ -4,32 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>1007. 素数对猜想 | Yihang Ding</title>
+    <title>1001. A+B Format (20) | Yihang Ding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Fox">
     
 
-    <meta name="keywords" content="c, 编程">
-    <meta name="description" content="让我们定义 dn 为：dn = pn+1 - pn，其中 pi 是第i个素数。显然有 d1=1 且对于n&amp;gt;1有 dn 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。
-现给定任意正整数N (&amp;lt; 10^5)，请计算不超过N的满足猜想的素数对的个数。
-输入格式：每个测试输入包含1个测试用例，给出正整数N。
-输出格式：每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。">
+    <meta name="keywords" content="pat, c, 编程">
+    <meta name="description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).
+Input
+Each input file contains on">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1007. 素数对猜想">
-<meta property="og:url" content="http://www.dyhfox.com/2015/07/09/1007-素数对猜想/index.html">
+<meta property="og:title" content="1001. A+B Format (20)">
+<meta property="og:url" content="http://www.dyhfox.com/2015/07/16/1001-A-B-Format-20/index.html">
 <meta property="og:site_name" content="Yihang Ding">
-<meta property="og:description" content="让我们定义 dn 为：dn = pn+1 - pn，其中 pi 是第i个素数。显然有 d1=1 且对于n&amp;gt;1有 dn 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。
-现给定任意正整数N (&amp;lt; 10^5)，请计算不超过N的满足猜想的素数对的个数。
-输入格式：每个测试输入包含1个测试用例，给出正整数N。
-输出格式：每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。">
-<meta property="og:updated_time" content="2015-07-19T14:01:26.000Z">
+<meta property="og:description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).
+Input
+Each input file contains on">
+<meta property="og:updated_time" content="2015-07-20T00:21:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1007. 素数对猜想">
-<meta name="twitter:description" content="让我们定义 dn 为：dn = pn+1 - pn，其中 pi 是第i个素数。显然有 d1=1 且对于n&amp;gt;1有 dn 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。
-现给定任意正整数N (&amp;lt; 10^5)，请计算不超过N的满足猜想的素数对的个数。
-输入格式：每个测试输入包含1个测试用例，给出正整数N。
-输出格式：每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。">
+<meta name="twitter:title" content="1001. A+B Format (20)">
+<meta name="twitter:description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).
+Input
+Each input file contains on">
 
     
     <link rel="alternative" href="/atom.xml" title="Yihang Ding" type="application/atom+xml">
@@ -88,14 +85,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/09/1007-素数对猜想/" title="1007. 素数对猜想" itemprop="url">1007. 素数对猜想</a>
+      <a href="/2015/07/16/1001-A-B-Format-20/" title="1001. A+B Format (20)" itemprop="url">1001. A+B Format (20)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-09T12:55:52.000Z" itemprop="datePublished"> 发表于 2015-07-09</time>
+    <time datetime="2015-07-16T00:10:21.000Z" itemprop="datePublished"> 发表于 2015-07-16</time>
     
   </p>
 </header>
@@ -108,49 +105,43 @@
 		
 		</div>
 		
-		<p>让我们定义 dn 为：dn = pn+1 - pn，其中 pi 是第i个素数。显然有 d1=1 且对于n&gt;1有 dn 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。</p>
-<p>现给定任意正整数N (&lt; 10^5)，请计算不超过N的满足猜想的素数对的个数。</p>
-<p>输入格式：每个测试输入包含1个测试用例，给出正整数N。</p>
-<p>输出格式：每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。</p>
-<p>输入样例：<br>20<br>输出样例：<br>4</p>
-<p>这道题还是挺考验功力，因为判题系统对运行时间有要求，这个问题在边界情况计算量还是蛮大的。我改了一次才通过，想了好久才想通，问题出在is_prime函数上。我之前很随意的用了</p>
-<pre><code>for<span class="comment">(i=2;i&lt;a/2;i++)</span>
-</code></pre><a id="more"></a>
-<p>这个语句导致我的程序运行超时，最后把a/2改成了sqrt(a)通过了。仔细想想这个运算量剩下的还是挺多的</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
-<span class="preprocessor">#<span class="keyword">include</span> &lt;math.h&gt;</span>
-
-<span class="comment">//Judge if a number is prime</span>
-<span class="function"><span class="keyword">int</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> a)</span></span>{
-    <span class="keyword">int</span> i;
-    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(a);i++){
-        <span class="keyword">if</span>(a%i==<span class="number">0</span>){
-            <span class="keyword">return</span> <span class="number">0</span>;
-        }
+		<p>Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
+<p>Input</p>
+<p>Each input file contains one test case. Each case contains a pair of integers a and b where -1000000 &lt;= a, b &lt;= 1000000. The numbers are separated by a space.</p>
+<p>Output</p>
+<p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
+<p>Sample Input<br>-1000000 9<br>Sample Output<br>-999,991</p>
+<hr>
+<p>To solve this problem, We should take care following points:</p>
+<ol>
+<li>Nagtive numbers, should be considered.</li>
+<li>Complement 0 in 0-999, both middle and after.</li>
+<li>Take remainder and quotient.</li>
+</ol>
+<p>Below is my code: </p>
+<a id="more"></a>
+<pre><code><span class="comment">#include &lt;stdio.h&gt;</span>
+<span class="comment">#include &lt;math.h&gt;</span>
+<span class="comment">#include &lt;stdlib.h&gt;</span>
+<span class="keyword">int</span> main(){
+    <span class="keyword">int</span> a, b;
+    scanf(<span class="string">"<span class="variable">%d</span> <span class="variable">%d</span>"</span>, &amp;a, &amp;b);
+    <span class="keyword">int</span> c = a + b;
+    <span class="keyword">if</span>(<span class="keyword">abs</span>(c)&lt;=<span class="number">999</span>){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%d</span>"</span>,c);
     }
-    <span class="keyword">return</span> <span class="number">1</span>;
-}
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
-    <span class="keyword">int</span> n;
-    <span class="keyword">int</span> cnt=<span class="number">0</span>;
-    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);
-    <span class="keyword">int</span> i;
-    <span class="keyword">int</span> temp =<span class="number">2</span>;
-
-    <span class="comment">//Looking for pair of prime that fulfil the requirement</span>
-    <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=n;i++){
-        <span class="keyword">if</span>(is_prime(i)==<span class="number">1</span>){
-            <span class="keyword">if</span>(i-temp==<span class="number">2</span>){
-                cnt++;
-            }
-            temp=i;
-        }
-
-    }    
-
-    <span class="comment">//Print count of the pair</span>
-    <span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);
+    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">abs</span>(c)&gt;<span class="number">999</span>&amp;&amp;<span class="keyword">abs</span>(c)&lt;=<span class="number">999999</span>){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%d</span>"</span>,c/<span class="number">1000</span>);
+        <span class="keyword">printf</span>(<span class="string">","</span>);
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%03d</span>"</span>,<span class="keyword">abs</span>(c<span class="variable">%1000</span>));<span class="regexp">//</span>Complement
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">abs</span>(c)&gt;=<span class="number">1000000</span>){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%d</span>"</span>,c/<span class="number">1000000</span>);
+        <span class="keyword">printf</span>(<span class="string">","</span>);
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%03d</span>"</span>,<span class="keyword">abs</span>(c<span class="variable">%1000000</span>)/<span class="number">1000</span>);
+        <span class="keyword">printf</span>(<span class="string">","</span>);
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%03d</span>"</span>,<span class="keyword">abs</span>(c<span class="variable">%1000</span>));
+    }
     <span class="keyword">return</span> <span class="number">0</span>;
 }
 </code></pre>  
@@ -160,7 +151,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
+  <a class="article-category-link" href="/categories/PAT-Advanced/">PAT Advanced</a>
 </div>
 
 
@@ -175,7 +166,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.dyhfox.com/2015/07/09/1007-素数对猜想/" data-title="1007. 素数对猜想 | Yihang Ding" data-tsina="hangge130" class="share clearfix">
+	  <div data-url="http://www.dyhfox.com/2015/07/16/1001-A-B-Format-20/" data-title="1001. A+B Format (20) | Yihang Ding" data-tsina="hangge130" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -188,19 +179,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/10/1008-数组循环右移问题/" title="1008. 数组循环右移问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  1008. 数组循环右移问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/08/1006-换个格式输出整数/"  title="1006. 换个格式输出整数">
+<a href="/2015/07/12/1010-一元多项式求导/"  title="1010. 一元多项式求导">
  <strong>下一篇：</strong><br/> 
- <span>1006. 换个格式输出整数
+ <span>1010. 一元多项式求导
 </span>
 </a>
 </div>
@@ -209,7 +192,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/09/1007-素数对猜想/" data-title="1007. 素数对猜想" data-url="http://www.dyhfox.com/2015/07/09/1007-素数对猜想/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/16/1001-A-B-Format-20/" data-title="1001. A+B Format (20)" data-url="http://www.dyhfox.com/2015/07/16/1001-A-B-Format-20/"></div>
 </section>
 
 
