@@ -901,17 +901,21 @@ Print the name and id of highest and lowest student.
     <link href="http://www.dyhfox.com/2015/07/01/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
     <id>http://www.dyhfox.com/2015/07/01/第一篇/</id>
     <published>2015-07-01T04:44:34.000Z</published>
-    <updated>2015-07-18T16:03:46.000Z</updated>
-    <content type="html"><![CDATA[<p>第一篇。</p>
+    <updated>2015-07-20T01:55:06.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="/images/IMG_2097.jpg" style="width: 700px;"></p>
+<p>鼓捣了两天，换了n个网页生成工具，终于确定下来选了hexo。虽然这个仍然是很简陋的静态页面，但是好歹是有个地方供我记录下生活了。</p>
+<p>实习三个半月，终于体会了以前嗤之以鼻的大人说的话：“当学生最舒服了”。回想起来在学校的时候有什么不如意愁得脑袋发胀，跟真正走上社会的愁比起来简直幸福的掉泪。人啊，总会经历了才会明白。看着刚刚拿到的毕业证学位证，恍然发现自己再也不是学生了，再也没有寒暑假，没有随心所欲，没有早起不想起来就逃课的机会了。再也不能把自己当孩子了。仿佛一下子所有的责任都有了。</p>
+<p>这三个半月想了很多。目前的工作也并不喜欢，但又无可奈何，因为自己的能力并不足以有底气辞职再去找工作。但有一点是好的，就是我现在终于弄明白该干什么该怎么干了。开这个博客也正是想有一个新的开始，记录我接下来的生活工作和学习。同时也希望能够敦促我坚持下去，如果哪天泄气了，上来看看我写的字，码的代码。重新鼓起勇气去向前走。自勉！</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>第一篇。</p>
-]]>
+    <![CDATA[<p><img src="/images/IMG_2097.jpg" style="width: 700px;"></p>
+<p>鼓捣了两天，换了n个网页生成工具，终于确定下来选了hexo。虽然这个仍然是很简陋的静态页面，但是好歹是有个地方供我记录下生活了。</p>
+<p>实习三]]>
     </summary>
     
       <category term="日常" scheme="http://www.dyhfox.com/tags/%E6%97%A5%E5%B8%B8/"/>
     
-      <category term="生活" scheme="http://www.dyhfox.com/categories/%E7%94%9F%E6%B4%BB/"/>
+      <category term="日常" scheme="http://www.dyhfox.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
