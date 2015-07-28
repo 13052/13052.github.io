@@ -25,7 +25,7 @@
 输入第1行给出正整数N（&amp;lt;=105），即双方交锋的次数。随后N行，每行给出一次交锋的信息，即甲、乙双方同时给出的的手势。C代表“锤子”、J代表“剪刀”、B代表“布”，第1个字母代表甲方，第2个代表乙方，中间有1个空格。
 输出格式：
 输出第1、2行分别给出甲、">
-<meta property="og:updated_time" content="2015-07-28T07:12:57.000Z">
+<meta property="og:updated_time" content="2015-07-28T07:14:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1018. 锤子剪刀布 (20)">
 <meta name="twitter:description" content="大家应该都会玩“锤子剪刀布”的游戏现给出两人的交锋记录，请统计双方的胜、平、负次数，并且给出双方分别出什么手势的胜算最大。
@@ -117,7 +117,7 @@
 <p>输出格式：</p>
 <p>输出第1、2行分别给出甲、乙的胜、平、负次数，数字间以1个空格分隔。第3行给出两个字母，分别代表甲、乙获胜次数最多的手势，中间有1个空格。如果解不唯一，则输出按字母序最小的解。</p>
 <p>输入样例：<br>10<br>C J<br>J B<br>C B<br>B B<br>B C<br>C C<br>C B<br>J B<br>B C<br>J J<br>输出样例：<br>5 3 2<br>2 3 5<br>B B</p>
-<p>这道题不难，但是比较麻烦。记录下各方胜利的次数和平的次数，就可以退出失败的次数。同时记录下胜利的手势，最后输出就好了。</p>
+<p>这道题不难，但是比较麻烦。记录下各方胜利的次数和平的次数，就可以推出失败的次数。同时记录下胜利的手势，最后输出就好了。</p>
 <a id="more"></a>
 <pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
 <span class="preprocessor">#<span class="keyword">include</span> &lt;stdlib.h&gt;</span>
