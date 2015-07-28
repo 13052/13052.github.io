@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Record my thoughts]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.dyhfox.com//"/>
-  <updated>2015-07-28T07:14:48.000Z</updated>
+  <updated>2015-07-28T10:48:51.000Z</updated>
   <id>http://www.dyhfox.com//</id>
   
   <author>
@@ -14,6 +14,112 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[1019. 数字黑洞 (20)]]></title>
+    <link href="http://www.dyhfox.com/2015/07/28/1019-%E6%95%B0%E5%AD%97%E9%BB%91%E6%B4%9E-20/"/>
+    <id>http://www.dyhfox.com/2015/07/28/1019-数字黑洞-20/</id>
+    <published>2015-07-28T10:46:19.000Z</published>
+    <updated>2015-07-28T10:48:51.000Z</updated>
+    <content type="html"><![CDATA[<p>给定任一个各位数字不完全相同的4位正整数，如果我们先把4个数字按非递增排序，再按非递减排序，然后用第1个数字减第2个数字，将得到一个新的数字。一直重复这样做，我们很快会停在有“数字黑洞”之称的6174，这个神奇的数字也叫Kaprekar常数。</p>
+<p>例如，我们从6767开始，将得到</p>
+<p>7766 - 6677 = 1089<br>9810 - 0189 = 9621<br>9621 - 1269 = 8352<br>8532 - 2358 = 6174<br>7641 - 1467 = 6174<br>… …</p>
+<p>现给定任意4位正整数，请编写程序演示到达黑洞的过程。</p>
+<p>输入格式：</p>
+<p>输入给出一个(0, 10000)区间内的正整数N。</p>
+<p>输出格式：</p>
+<p>如果N的4位数字全相等，则在一行内输出“N - N = 0000”；否则将计算的每一步在一行内输出，直到6174作为差出现，输出格式见样例。注意每个数字按4位数格式输出。</p>
+<p>输入样例1：<br>6767<br>输出样例1：<br>7766 - 6677 = 1089<br>9810 - 0189 = 9621<br>9621 - 1269 = 8352<br>8532 - 2358 = 6174<br>输入样例2：<br>2222<br>输出样例2：<br>2222 - 2222 = 0000</p>
+<p>通过一个数组存储中间变量，进行排序并组合成新的数，然后进行运算。</p>
+<a id="more"></a>
+<pre><code><span class="comment">#include &lt;stdio.h&gt;</span>
+<span class="comment">#include &lt;stdlib.h&gt;</span>
+<span class="comment">#include &lt;math.h&gt;</span>
+
+//sort 
+<span class="type">int</span> sort_l(<span class="type">int</span> *a){
+    <span class="type">int</span> i,j, temp, ret;
+    ret=<span class="number">0</span>;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++){
+        <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;<span class="number">4</span>;j++){
+            <span class="keyword">if</span>(a[i]&gt;a[j]){
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    <span class="keyword">for</span>(i=<span class="number">3</span>;i&gt;=<span class="number">0</span>;i--){
+        ret= ret + (a[i]*pow(<span class="number">10</span>, i));
+    }
+    <span class="keyword">return</span> ret;
+}
+
+//sort
+<span class="type">int</span> sort_s(<span class="type">int</span> *a){
+    <span class="type">int</span> i, j, temp, ret;
+    ret=<span class="number">0</span>;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++){
+        <span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;<span class="number">4</span>;j++){
+            <span class="keyword">if</span>(a[i]&lt;a[j]){
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    <span class="keyword">for</span>(i=<span class="number">3</span>;i&gt;=<span class="number">0</span>;i--){
+        ret= ret + (a[i]*pow(<span class="number">10</span>, i));
+    }
+    <span class="keyword">return</span> ret;
+}
+
+
+<span class="type">int</span> main(){
+
+    <span class="type">int</span> n,a[<span class="number">4</span>];
+    <span class="type">int</span> <span class="literal">result</span>=<span class="number">0</span>;
+    <span class="type">int</span> l, s;
+    scanf(<span class="string">"%d"</span>,&amp;n);
+    <span class="keyword">if</span>(n%<span class="number">1111</span>==<span class="number">0</span>){//<span class="keyword">if</span> <span class="number">4</span> number are same, then the n%<span class="number">1111</span> should equals to <span class="number">0</span>
+        printf(<span class="string">"%d - %d = 0000\n"</span>, n, n);
+    }
+    <span class="keyword">else</span>{
+        <span class="keyword">while</span>(<span class="literal">result</span>!=<span class="number">6174</span>){//calculate
+            a[<span class="number">0</span>]=n/<span class="number">1000</span>;
+            a[<span class="number">1</span>]=(n%<span class="number">1000</span>)/<span class="number">100</span>;
+            a[<span class="number">2</span>]=(n%<span class="number">100</span>)/<span class="number">10</span>;
+            a[<span class="number">3</span>]=n%<span class="number">10</span>;
+            l=sort_l(a);
+            s=sort_s(a);
+            <span class="literal">result</span>=l-s;
+            printf(<span class="string">"%04d - %04d = %04d\n"</span>,l, s, <span class="literal">result</span>);
+            n=<span class="literal">result</span>;
+        }
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>给定任一个各位数字不完全相同的4位正整数，如果我们先把4个数字按非递增排序，再按非递减排序，然后用第1个数字减第2个数字，将得到一个新的数字。一直重复这样做，我们很快会停在有“数字黑洞”之称的6174，这个神奇的数字也叫Kaprekar常数。</p>
+<p>例如，我们从6767开始，将得到</p>
+<p>7766 - 6677 = 1089<br>9810 - 0189 = 9621<br>9621 - 1269 = 8352<br>8532 - 2358 = 6174<br>7641 - 1467 = 6174<br>… …</p>
+<p>现给定任意4位正整数，请编写程序演示到达黑洞的过程。</p>
+<p>输入格式：</p>
+<p>输入给出一个(0, 10000)区间内的正整数N。</p>
+<p>输出格式：</p>
+<p>如果N的4位数字全相等，则在一行内输出“N - N = 0000”；否则将计算的每一步在一行内输出，直到6174作为差出现，输出格式见样例。注意每个数字按4位数格式输出。</p>
+<p>输入样例1：<br>6767<br>输出样例1：<br>7766 - 6677 = 1089<br>9810 - 0189 = 9621<br>9621 - 1269 = 8352<br>8532 - 2358 = 6174<br>输入样例2：<br>2222<br>输出样例2：<br>2222 - 2222 = 0000</p>
+<p>通过一个数组存储中间变量，进行排序并组合成新的数，然后进行运算。</p>]]>
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
+    
+      <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[1018. 锤子剪刀布 (20)]]></title>
@@ -1476,29 +1582,6 @@ Print the name and id of highest and lowest student.
       <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
     
       <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[第一篇]]></title>
-    <link href="http://www.dyhfox.com/2015/07/01/%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
-    <id>http://www.dyhfox.com/2015/07/01/第一篇/</id>
-    <published>2015-07-01T04:44:34.000Z</published>
-    <updated>2015-07-20T01:55:06.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="/images/IMG_2097.jpg" style="width: 700px;"></p>
-<p>鼓捣了两天，换了n个网页生成工具，终于确定下来选了hexo。虽然这个仍然是很简陋的静态页面，但是好歹是有个地方供我记录下生活了。</p>
-<p>实习三个半月，终于体会了以前嗤之以鼻的大人说的话：“当学生最舒服了”。回想起来在学校的时候有什么不如意愁得脑袋发胀，跟真正走上社会的愁比起来简直幸福的掉泪。人啊，总会经历了才会明白。看着刚刚拿到的毕业证学位证，恍然发现自己再也不是学生了，再也没有寒暑假，没有随心所欲，没有早起不想起来就逃课的机会了。再也不能把自己当孩子了。仿佛一下子所有的责任都有了。</p>
-<p>这三个半月想了很多。目前的工作也并不喜欢，但又无可奈何，因为自己的能力并不足以有底气辞职再去找工作。但有一点是好的，就是我现在终于弄明白该干什么该怎么干了。开这个博客也正是想有一个新的开始，记录我接下来的生活工作和学习。同时也希望能够敦促我坚持下去，如果哪天泄气了，上来看看我写的字，码的代码。重新鼓起勇气去向前走。自勉！</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="/images/IMG_2097.jpg" style="width: 700px;"></p>
-<p>鼓捣了两天，换了n个网页生成工具，终于确定下来选了hexo。虽然这个仍然是很简陋的静态页面，但是好歹是有个地方供我记录下生活了。</p>
-<p>实习三]]>
-    </summary>
-    
-      <category term="日常" scheme="http://www.dyhfox.com/tags/%E6%97%A5%E5%B8%B8/"/>
-    
-      <category term="日常" scheme="http://www.dyhfox.com/categories/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
