@@ -80,6 +80,77 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/08/17/1023-组个最小数-20/" title="1023. 组个最小数 (20)" itemprop="url">1023. 组个最小数 (20)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
+		
+  <p class="article-time">
+    <time datetime="2015-08-17T15:24:54.000Z" itemprop="datePublished"> 发表于 2015-08-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>给定数字0-9各若干个。你可以以任意顺序排列这些数字，但必须全部使用。目标是使得最后得到的数尽可能小（注意0不能做首位）。例如：给定两个0，两个1，三个5，一个8，我们得到的最小的数就是10015558。</p>
+<p>现给定数字，请编写程序输出能够组成的最小的数。</p>
+<p>输入格式：</p>
+<p>每个输入包含1个测试用例。每个测试用例在一行中给出10个非负整数，顺序表示我们拥有数字0、数字1、……数字9的个数。整数间用一个空格分隔。10个数字的总个数不超过50，且至少拥有1个非0的数字。</p>
+<p>输出格式：</p>
+<p>在一行中输出能够组成的最小的数。</p>
+<p>输入样例：<br>2 2 0 0 0 3 0 0 1 0<br>输出样例：<br>10015558</p>
+<p>这道题的思路比较简单，就是先从1开始往后数，遇到不为零个的数字输出一个，将此数字的个数减去1。之后从数字0开始往后把所有的数输出。代码如下：</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2015/08/17/1023-组个最小数-20/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Coding/">Coding</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/08/17/1023-组个最小数-20/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/08/17/1023-组个最小数-20/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/08/17/1022-D进制的A-B-20/" title="1022. D进制的A+B (20)" itemprop="url">1022. D进制的A+B (20)</a>
   </h1>
   <p class="article-author">By
@@ -708,77 +779,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/16/1015-德才论-25/" title="1015. 德才论 (25)" itemprop="url">1015. 德才论 (25)</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-16T13:05:19.000Z" itemprop="datePublished"> 发表于 2015-07-16</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”</p>
-<p>现给出一批考生的德才分数，请根据司马光的理论给出录取排名。</p>
-<p>输入格式：</p>
-<p>输入第1行给出3个正整数，分别为：N（&lt;=105），即考生总数；L（&gt;=60），为录取最低分数线，即德分和才分均不低于L的考生才有资格被考虑录取；H（&lt;100），为优先录取线——德分和才分均不低于此线的被定义为“才德全尽”，此类考生按德才总分从高到低排序；才分不到但德分到线的一类考生属于“德胜才”，也按总分排序，但排在第一类考生之后；德才分均低于H，但是德分不低于才分的考生属于“才德兼亡”但尚有“德胜才”者，按总分排序，但排在第二类考生之后；其他达到最低线L的考生也按总分排序，但排在第三类考生之后。</p>
-<p>随后N行，每行给出一位考生的信息，包括：准考证号、德分、才分，其中准考证号为8位整数，德才分为区间[0, 100]内的整数。数字间以空格分隔。</p>
-<p>输出格式：</p>
-<p>输出第1行首先给出达到最低分数线的考生人数M，随后M行，每行按照输入格式输出一位考生的信息，考生按输入中说明的规则从高到低排序。当某类考生中有多人总分相同时，按其德分降序排列；若德分也并列，则按准考证号的升序输出。</p>
-<p>输入样例：<br>14 60 80<br>10000001 64 90<br>10000002 90 60<br>10000011 85 80<br>10000003 85 80<br>10000004 80 85<br>10000005 82 77<br>10000006 83 76<br>10000007 90 78<br>10000008 75 79<br>10000009 59 90<br>10000010 88 45<br>10000012 80 100<br>10000013 90 99<br>10000014 66 60<br>输出样例：<br>12<br>10000013 90 99<br>10000012 80 100<br>10000003 85 80<br>10000011 85 80<br>10000004 80 85<br>10000007 90 78<br>10000006 83 76<br>10000005 82 77<br>10000002 90 60<br>10000014 66 60<br>10000008 75 79<br>10000001 64 90<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/07/16/1015-德才论-25/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/PAT-Basic/">PAT Basic</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Coding/">Coding</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/16/1015-德才论-25/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/16/1015-德才论-25/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -801,7 +801,7 @@
 		  
 		
 		  
-			<li><a href="/categories/PAT-Basic/" title="PAT Basic">PAT Basic<sup>22</sup></a></li>
+			<li><a href="/categories/PAT-Basic/" title="PAT Basic">PAT Basic<sup>23</sup></a></li>
 		  
 		
 		  
@@ -818,7 +818,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/Coding/" title="Coding">Coding<sup>23</sup></a></li>
+				<li><a href="/tags/Coding/" title="Coding">Coding<sup>24</sup></a></li>
 			
 		
 			
