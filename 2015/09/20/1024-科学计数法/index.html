@@ -23,7 +23,7 @@
 现以科学计数法的格式给出实数A，请编写程序按普通数字表示法输出A，并保证所有有效位都被保留。
 输入格式：
 每个输入包含1个测试用例，即一个以科学计数法表示的实数A。">
-<meta property="og:updated_time" content="2015-09-28T11:26:25.000Z">
+<meta property="og:updated_time" content="2015-10-06T06:21:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1024.科学计数法">
 <meta name="twitter:description" content="科学计数法是科学家用来表示很大或很小的数字的一种方便的方法，其满足正则表达式[+-][1-9]”.”[0-9]+E[+-][0-9]+，即数字的整数部分只有1位，小数部分至少有1位，该数字及其指数部分的正负号即使对正数也必定明确给出。
@@ -104,7 +104,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#include"><span class="toc-number">1.</span> <span class="toc-text">include</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-1"><span class="toc-number">2.</span> <span class="toc-text">include</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-2"><span class="toc-number">3.</span> <span class="toc-text">include</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-3"><span class="toc-number">4.</span> <span class="toc-text">include</span></a></li></ol>
+			
 		
 		</div>
 		
@@ -116,10 +116,31 @@
 <p>对每个测试用例，在一行中按普通数字表示法输出A，并保证所有有效位都被保留，包括末尾的0。</p>
 <p>输入样例1：<br>+1.23400E-03<br>输出样例1：<br>0.00123400<br>输入样例2：<br>-1.2E+10<br>输出样例2：<br>-12000000000</p>
 <a id="more"></a>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span>&lt;iostream&gt;</span>
-</code></pre><h1 id="include">include<sstream></sstream></h1><h1 id="include-1">include<cmath></cmath></h1><h1 id="include-2">include<vector></vector></h1><h1 id="include-3">include<string></string></h1><p>  using namespace std;</p>
-<p>  int main()<br>  {<br>    int i,j,m,n,mark,value1,k,value2;<br>    string s1,zhishu=””;<br>    cin&gt;&gt;s1;<br>    if(s1[0] == ‘+’){<br>      for(i=1;i&lt;s1.length();i++){ //找到E<br>        if(s1[i]==’E’){<br>          mark=i;<br>          break;<br>        }<br>      }<br>      for(j=mark+2;j&lt;s1.length();j++){  //将指数转换成int型<br>          zhishu = zhishu + s1[j];<br>        }<br>        value1=atoi(zhishu.c_str());</p>
-<pre><code>  <span class="keyword">if</span>(s1[<span class="keyword">mark</span>+1]=='-'){
+<pre><code>#<span class="keyword">include</span>&lt;iostream&gt;
+#<span class="keyword">include</span>&lt;sstream&gt;
+#<span class="keyword">include</span>&lt;cmath&gt;
+#<span class="keyword">include</span>&lt;vector&gt;
+#<span class="keyword">include</span>&lt;string&gt;
+using namespace std;
+
+int main()
+{
+   int i,j,<span class="keyword">m</span>,<span class="keyword">n</span>,<span class="keyword">mark</span>,value1,k,value2;
+   string s1,zhishu=<span class="string">""</span>;
+   cin&gt;&gt;s1;
+   <span class="keyword">if</span>(s1[0] == '+'){
+     <span class="keyword">for</span>(i=1;i&lt;s1.<span class="literal">length</span>();i++){ <span class="comment">//找到E</span>
+        <span class="keyword">if</span>(s1[i]=='<span class="keyword">E</span>'){
+          <span class="keyword">mark</span>=i;
+          <span class="keyword">break</span>;
+        }
+     }
+   <span class="keyword">for</span>(j=<span class="keyword">mark</span>+2;j&lt;s1.<span class="literal">length</span>();j++){  <span class="comment">//将指数转换成int型</span>
+      zhishu = zhishu + s1[j];
+    }
+    value1=atoi(zhishu.c_str());
+
+  <span class="keyword">if</span>(s1[<span class="keyword">mark</span>+1]=='-'){
 
     cout&lt;&lt;0&lt;&lt;<span class="string">"."</span>;
     value1--;
@@ -264,7 +285,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#include"><span class="toc-number">1.</span> <span class="toc-text">include</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-1"><span class="toc-number">2.</span> <span class="toc-text">include</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-2"><span class="toc-number">3.</span> <span class="toc-text">include</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-3"><span class="toc-number">4.</span> <span class="toc-text">include</span></a></li></ol>
+ 
  
   </div>
 
