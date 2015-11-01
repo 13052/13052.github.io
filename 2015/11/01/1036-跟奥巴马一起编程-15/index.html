@@ -4,32 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>1010. 一元多项式求导 | Yihang Ding</title>
+    <title>1036. 跟奥巴马一起编程(15) | Yihang Ding</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Fox">
     
 
-    <meta name="keywords" content="c, 编程, PAT">
-    <meta name="description" content="设计函数求一元多项式的导数。（注：xn（n为整数）的一阶导数为n*xn-1。）
-输入格式：以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。
-输出格式：以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。
-输入样例：3 4 -5 2 6 1 -2 0输出样例">
+    <meta name="keywords" content="c, pat, 编程">
+    <meta name="description" content="美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！
+输入格式：
+输入在一行中给出正方形边长N（3&amp;lt;=N&amp;lt;=20）和组成正方形边的某种字符C，间隔一个空格。
+输出格式：
+输出由给定字符C画出的正方形。但是注意到行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1010. 一元多项式求导">
-<meta property="og:url" content="http://www.dyhfox.com/2015/07/12/1010-一元多项式求导/index.html">
+<meta property="og:title" content="1036. 跟奥巴马一起编程(15)">
+<meta property="og:url" content="http://www.dyhfox.com/2015/11/01/1036-跟奥巴马一起编程-15/index.html">
 <meta property="og:site_name" content="Yihang Ding">
-<meta property="og:description" content="设计函数求一元多项式的导数。（注：xn（n为整数）的一阶导数为n*xn-1。）
-输入格式：以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。
-输出格式：以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。
-输入样例：3 4 -5 2 6 1 -2 0输出样例">
-<meta property="og:updated_time" content="2015-07-19T22:37:21.000Z">
+<meta property="og:description" content="美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！
+输入格式：
+输入在一行中给出正方形边长N（3&amp;lt;=N&amp;lt;=20）和组成正方形边的某种字符C，间隔一个空格。
+输出格式：
+输出由给定字符C画出的正方形。但是注意到行">
+<meta property="og:updated_time" content="2015-11-01T11:51:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1010. 一元多项式求导">
-<meta name="twitter:description" content="设计函数求一元多项式的导数。（注：xn（n为整数）的一阶导数为n*xn-1。）
-输入格式：以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。
-输出格式：以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。
-输入样例：3 4 -5 2 6 1 -2 0输出样例">
+<meta name="twitter:title" content="1036. 跟奥巴马一起编程(15)">
+<meta name="twitter:description" content="美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！
+输入格式：
+输入在一行中给出正方形边长N（3&amp;lt;=N&amp;lt;=20）和组成正方形边的某种字符C，间隔一个空格。
+输出格式：
+输出由给定字符C画出的正方形。但是注意到行">
 
     
     <link rel="alternative" href="/atom.xml" title="Yihang Ding" type="application/atom+xml">
@@ -88,14 +91,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/12/1010-一元多项式求导/" title="1010. 一元多项式求导" itemprop="url">1010. 一元多项式求导</a>
+      <a href="/2015/11/01/1036-跟奥巴马一起编程-15/" title="1036. 跟奥巴马一起编程(15)" itemprop="url">1036. 跟奥巴马一起编程(15)</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Fox" target="_blank" itemprop="author">Fox</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-11T22:24:32.000Z" itemprop="datePublished"> 发表于 2015-07-12</time>
+    <time datetime="2015-11-01T11:49:39.000Z" itemprop="datePublished"> 发表于 2015-11-01</time>
     
   </p>
 </header>
@@ -108,73 +111,45 @@
 		
 		</div>
 		
-		<p>设计函数求一元多项式的导数。（注：xn（n为整数）的一阶导数为n*xn-1。）</p>
-<p>输入格式：以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。</p>
-<p>输出格式：以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。</p>
-<p>输入样例：<br>3 4 -5 2 6 1 -2 0<br>输出样例：<br>12 3 -10 1 6 0</p>
-<p>这道题为了方便我用了结构体数组。特别要注意如果全是0多项式的话要输出一个 0 0<br><a id="more"></a></p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
-<span class="preprocessor">#<span class="keyword">define</span> N 1000</span>
-<span class="keyword">typedef</span> <span class="keyword">struct</span> poly{
-    <span class="keyword">int</span> coe;
-    <span class="keyword">int</span> index;
-}Poly;
+		<p>美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！</p>
+<p>输入格式：</p>
+<p>输入在一行中给出正方形边长N（3&lt;=N&lt;=20）和组成正方形边的某种字符C，间隔一个空格。</p>
+<p>输出格式：</p>
+<p>输出由给定字符C画出的正方形。但是注意到行间距比列间距大，所以为了让结果看上去更像正方形，我们输出的行数实际上是列数的50%（四舍五入取整）。</p>
+<p>输入样例：<br>10 a<br>输出样例：<br>aaaaaaaaaa<br>a        a<br>a        a<br>a        a<br>aaaaaaaaaa</p>
+<p>这个题很简单，主要就是注意『四舍五入』。不能简单的除。<br><a id="more"></a></p>
+<pre><code><span class="comment">#include &lt;stdio.h&gt;</span>
 
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
-    Poly a[N];
-    <span class="keyword">int</span> i, tag;
-    i = <span class="number">0</span>;
-
-    <span class="comment">//input data</span>
-    <span class="keyword">while</span>(i&lt;N){
-        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;a[i].coe, &amp;a[i].index);
-        <span class="keyword">if</span>(getchar()==<span class="string">'\n'</span>){
-            <span class="keyword">break</span>;
-        }
-        i++;
+<span class="keyword">int</span> main(){
+    <span class="keyword">int</span> <span class="keyword">length</span>;
+    char c;
+    scanf(<span class="string">"<span class="variable">%d</span> <span class="variable">%c</span>"</span>, &amp;<span class="keyword">length</span>, &amp;c);<span class="regexp">//length</span> &gt;=<span class="number">3</span> <span class="keyword">and</span> <span class="keyword">length</span> &lt;= <span class="number">20</span>
+    <span class="keyword">int</span> i,j;
+    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="keyword">length</span>; i++){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%c</span>"</span>, c);
     }
-
-    tag = i;  <span class="comment">//store the count of array</span>
-    <span class="keyword">int</span> flag = <span class="number">0</span>;
-    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=tag;i++){    <span class="comment">//mention that i&lt;=tag;</span>
-        <span class="keyword">if</span>(a[i].index!=<span class="number">0</span>){
-            a[i].coe*=a[i].index;
-            a[i].index-=<span class="number">1</span>;
-            <span class="keyword">if</span>(a[i].coe!=<span class="number">0</span>){
-                <span class="keyword">if</span> (flag==<span class="number">1</span>){
-                    <span class="built_in">printf</span>(<span class="string">" "</span>);
-                    flag =<span class="number">0</span>;
-                }
-                <span class="built_in">printf</span>(<span class="string">"%d %d"</span>, a[i].coe, a[i].index);
-                flag =<span class="number">1</span>;
-            }      
+    <span class="keyword">printf</span>(<span class="string">"\n"</span>);
+    <span class="keyword">int</span> est = <span class="keyword">length</span>/<span class="number">2</span>;
+    <span class="keyword">int</span> estCon = <span class="keyword">length</span><span class="variable">%2</span>;
+    <span class="keyword">if</span> (estCon == <span class="number">1</span>){
+        est++;
+    }
+    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;est-<span class="number">2</span>;j++){
+        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="keyword">length</span>;i++){
+            <span class="keyword">if</span>(i==<span class="number">0</span> || i==<span class="keyword">length</span>-<span class="number">1</span>){
+                <span class="keyword">printf</span>(<span class="string">"<span class="variable">%c</span>"</span>,c);
+            }
+            <span class="keyword">else</span>{
+                <span class="keyword">printf</span>(<span class="string">" "</span>);
+            }
         }
-    }  
-    <span class="keyword">if</span>(!flag)<span class="comment">//if there is not output, then print 0 0</span>
-        <span class="built_in">printf</span>(<span class="string">"0 0"</span>);
+        <span class="keyword">printf</span>(<span class="string">"\n"</span>);
+    }
+    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="keyword">length</span>; i++){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%c</span>"</span>, c);
+    }
+    <span class="keyword">printf</span>(<span class="string">"\n"</span>);
     <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre><p>我这个程序结构有点啰嗦，我在网上搜到别人写的一个，非常简洁，但是我没想到这点。在这贴出来</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;  </span>
-<span class="preprocessor">#<span class="keyword">include</span> &lt;string.h&gt;  </span>
-
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  
-</span>{  
-    <span class="keyword">int</span> n, e, flag = <span class="number">0</span>;  
-    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;e) != EOF)  
-    {  
-        <span class="keyword">if</span>( n*e )  
-        {  
-            <span class="keyword">if</span>(flag)  
-                <span class="built_in">printf</span>(<span class="string">" "</span>);  
-            <span class="keyword">else</span>  
-                flag = <span class="number">1</span>;  
-            <span class="built_in">printf</span>(<span class="string">"%d %d"</span>, n*e, e-<span class="number">1</span>);  
-        }  
-    }  
-    <span class="keyword">if</span>(!flag) <span class="built_in">printf</span>(<span class="string">"0 0"</span>);  
-
-    <span class="keyword">return</span> <span class="number">0</span>;  
 }
 </code></pre>  
 	</div>
@@ -198,7 +173,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.dyhfox.com/2015/07/12/1010-一元多项式求导/" data-title="1010. 一元多项式求导 | Yihang Ding" data-tsina="hangge130" class="share clearfix">
+	  <div data-url="http://www.dyhfox.com/2015/11/01/1036-跟奥巴马一起编程-15/" data-title="1036. 跟奥巴马一起编程(15) | Yihang Ding" data-tsina="hangge130" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -211,19 +186,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/14/1012. 数字分类 (20)/" title="1012. 数字分类 (20)">
-  <strong>上一篇：</strong><br/>
-  <span>
-  1012. 数字分类 (20)</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/11/1011-A-B和C/"  title="1011. A+B和C">
+<a href="/2015/09/20/1024-科学计数法/"  title="1024.科学计数法">
  <strong>下一篇：</strong><br/> 
- <span>1011. A+B和C
+ <span>1024.科学计数法
 </span>
 </a>
 </div>
@@ -232,7 +199,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/12/1010-一元多项式求导/" data-title="1010. 一元多项式求导" data-url="http://www.dyhfox.com/2015/07/12/1010-一元多项式求导/"></div>
+	<div class="ds-thread" data-thread-key="2015/11/01/1036-跟奥巴马一起编程-15/" data-title="1036. 跟奥巴马一起编程(15)" data-url="http://www.dyhfox.com/2015/11/01/1036-跟奥巴马一起编程-15/"></div>
 </section>
 
 

@@ -5,7 +5,7 @@
   <subtitle><![CDATA[Record my thoughts]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.dyhfox.com//"/>
-  <updated>2015-10-06T06:21:36.000Z</updated>
+  <updated>2015-11-01T11:51:26.000Z</updated>
   <id>http://www.dyhfox.com//</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[1036. 跟奥巴马一起编程(15)]]></title>
+    <link href="http://www.dyhfox.com/2015/11/01/1036-%E8%B7%9F%E5%A5%A5%E5%B7%B4%E9%A9%AC%E4%B8%80%E8%B5%B7%E7%BC%96%E7%A8%8B-15/"/>
+    <id>http://www.dyhfox.com/2015/11/01/1036-跟奥巴马一起编程-15/</id>
+    <published>2015-11-01T11:49:39.000Z</published>
+    <updated>2015-11-01T11:51:26.000Z</updated>
+    <content type="html"><![CDATA[<p>美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！</p>
+<p>输入格式：</p>
+<p>输入在一行中给出正方形边长N（3&lt;=N&lt;=20）和组成正方形边的某种字符C，间隔一个空格。</p>
+<p>输出格式：</p>
+<p>输出由给定字符C画出的正方形。但是注意到行间距比列间距大，所以为了让结果看上去更像正方形，我们输出的行数实际上是列数的50%（四舍五入取整）。</p>
+<p>输入样例：<br>10 a<br>输出样例：<br>aaaaaaaaaa<br>a        a<br>a        a<br>a        a<br>aaaaaaaaaa</p>
+<p>这个题很简单，主要就是注意『四舍五入』。不能简单的除。<br><a id="more"></a></p>
+<pre><code><span class="comment">#include &lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> main(){
+    <span class="keyword">int</span> <span class="keyword">length</span>;
+    char c;
+    scanf(<span class="string">"<span class="variable">%d</span> <span class="variable">%c</span>"</span>, &amp;<span class="keyword">length</span>, &amp;c);<span class="regexp">//length</span> &gt;=<span class="number">3</span> <span class="keyword">and</span> <span class="keyword">length</span> &lt;= <span class="number">20</span>
+    <span class="keyword">int</span> i,j;
+    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="keyword">length</span>; i++){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%c</span>"</span>, c);
+    }
+    <span class="keyword">printf</span>(<span class="string">"\n"</span>);
+    <span class="keyword">int</span> est = <span class="keyword">length</span>/<span class="number">2</span>;
+    <span class="keyword">int</span> estCon = <span class="keyword">length</span><span class="variable">%2</span>;
+    <span class="keyword">if</span> (estCon == <span class="number">1</span>){
+        est++;
+    }
+    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;est-<span class="number">2</span>;j++){
+        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="keyword">length</span>;i++){
+            <span class="keyword">if</span>(i==<span class="number">0</span> || i==<span class="keyword">length</span>-<span class="number">1</span>){
+                <span class="keyword">printf</span>(<span class="string">"<span class="variable">%c</span>"</span>,c);
+            }
+            <span class="keyword">else</span>{
+                <span class="keyword">printf</span>(<span class="string">" "</span>);
+            }
+        }
+        <span class="keyword">printf</span>(<span class="string">"\n"</span>);
+    }
+    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="keyword">length</span>; i++){
+        <span class="keyword">printf</span>(<span class="string">"<span class="variable">%c</span>"</span>, c);
+    }
+    <span class="keyword">printf</span>(<span class="string">"\n"</span>);
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>美国总统奥巴马不仅呼吁所有人都学习编程，甚至以身作则编写代码，成为美国历史上首位编写计算机代码的总统。2014年底，为庆祝“计算机科学教育周”正式启动，奥巴马编写了很简单的计算机代码：在屏幕上画一个正方形。现在你也跟他一起画吧！</p>
+<p>输入格式：</p>
+<p>输入在一行中给出正方形边长N（3&lt;=N&lt;=20）和组成正方形边的某种字符C，间隔一个空格。</p>
+<p>输出格式：</p>
+<p>输出由给定字符C画出的正方形。但是注意到行间距比列间距大，所以为了让结果看上去更像正方形，我们输出的行数实际上是列数的50%（四舍五入取整）。</p>
+<p>输入样例：<br>10 a<br>输出样例：<br>aaaaaaaaaa<br>a        a<br>a        a<br>a        a<br>aaaaaaaaaa</p>
+<p>这个题很简单，主要就是注意『四舍五入』。不能简单的除。<br>]]>
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
+    
+      <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[1024.科学计数法]]></title>
@@ -1523,55 +1587,6 @@ int main<span class="params">()</span>{
 <p>这道题还是挺考验功力，因为判题系统对运行时间有要求，这个问题在边界情况计算量还是蛮大的。我改了一次才通过，想了好久才想通，问题出在is_prime函数上。我之前很随意的用了</p>
 <pre><code>for<span class="comment">(i=2;i&lt;a/2;i++)</span>
 </code></pre>]]>
-    
-    </summary>
-    
-      <category term="Coding" scheme="http://www.dyhfox.com/tags/Coding/"/>
-    
-      <category term="PAT Basic" scheme="http://www.dyhfox.com/categories/PAT-Basic/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[1006. 换个格式输出整数]]></title>
-    <link href="http://www.dyhfox.com/2015/07/08/1006-%E6%8D%A2%E4%B8%AA%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E6%95%B4%E6%95%B0/"/>
-    <id>http://www.dyhfox.com/2015/07/08/1006-换个格式输出整数/</id>
-    <published>2015-07-08T11:25:34.000Z</published>
-    <updated>2015-07-19T13:55:59.000Z</updated>
-    <content type="html"><![CDATA[<p>让我们用字母B来表示“百”、字母S表示“十”，用“12…n”来表示个位数字n（&lt;10），换个格式来输出任一个不超过3位的正整数。例如234应该被输出为BBSSS1234，因为它有2个“百”、3个“十”、以及个位的4。</p>
-<p>输入格式：每个测试输入包含1个测试用例，给出正整数n（&lt;1000）。</p>
-<p>输出格式：每个测试用例的输出占一行，用规定的格式输出n。</p>
-<p>输入样例1：<br>234<br>输出样例1：<br>BBSSS1234<br>输入样例2：<br>23<br>输出样例2：<br>SS123</p>
-<p>这个程序最开始我想复杂了，用的字符串来解决的，写了整整四十行的代码。后来突然想明白了，用两个取余运算就可以了。因为不论几位数，取余都不会影响结果，不需要控制位数的语句。</p>
-<a id="more"></a>
-<p>这是修改后的代码，非常简洁，也非常好理解</p>
-<pre><code><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span>
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{
-    <span class="keyword">int</span> n,i;
-    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);
-    <span class="keyword">int</span> b,s,g;
-    b=n/<span class="number">100</span>;     <span class="comment">//百位上的数</span>
-    s=n%<span class="number">100</span>/<span class="number">10</span>; <span class="comment">//十位数上的数</span>
-    g=n%<span class="number">10</span>;        <span class="comment">//个位数</span>
-    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;b;i++){
-        <span class="built_in">printf</span>(<span class="string">"B"</span>);
-    }
-    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;s;i++){
-        <span class="built_in">printf</span>(<span class="string">"S"</span>);
-    }
-    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=g;i++){
-        <span class="built_in">printf</span>(<span class="string">"%d"</span>,i);
-    }
-
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>让我们用字母B来表示“百”、字母S表示“十”，用“12…n”来表示个位数字n（&lt;10），换个格式来输出任一个不超过3位的正整数。例如234应该被输出为BBSSS1234，因为它有2个“百”、3个“十”、以及个位的4。</p>
-<p>输入格式：每个测试输入包含1个测试用例，给出正整数n（&lt;1000）。</p>
-<p>输出格式：每个测试用例的输出占一行，用规定的格式输出n。</p>
-<p>输入样例1：<br>234<br>输出样例1：<br>BBSSS1234<br>输入样例2：<br>23<br>输出样例2：<br>SS123</p>
-<p>这个程序最开始我想复杂了，用的字符串来解决的，写了整整四十行的代码。后来突然想明白了，用两个取余运算就可以了。因为不论几位数，取余都不会影响结果，不需要控制位数的语句。</p>]]>
     
     </summary>
     
